@@ -11,24 +11,15 @@ This ensures that versioning the code is comprehensive and maintainable.
 ### Branch Breakdown
 
 Master
-|
--- Dev
-	|
-	-- Ren-David/
-		|
-		Features
-	|
-	-- Megan/
-		|
-		Features
-	|
-	-- Yang/
-		|
-		Features
-	|
-	-- Chris/
-		|
-		Features
+> Dev
+>> Ren-David/		
+>>> Features
+>>Megan/
+>>>Features
+>>Yang/
+>>>Features
+>>Chris/
+>>>Features
 
 
 
