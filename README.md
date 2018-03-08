@@ -10,8 +10,10 @@ This ensures that versioning the code is comprehensive and maintainable.
 
 ### Branch Breakdown
 
-Master
-> Dev
+**master**: Will contain working versions of the application
+
+master
+> dev
 >> Ren-David/		
 >>> Features
 
