@@ -4,7 +4,7 @@ The application that allows users to rate the paving conditions of the roads the
 
 ## Workflow
 
-This application will be following the GitFlow[1] branching model.
+This application will be following the [GitFlow] branching model.
 
 This ensures that versioning the code is comprehensive and maintainable.
 
@@ -31,4 +31,4 @@ master
 
 
 
-[1]: https://danielkummer.github.io/git-flow-cheatsheet/
+[GitFlow]: https://danielkummer.github.io/git-flow-cheatsheet/
