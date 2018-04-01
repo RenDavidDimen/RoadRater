@@ -13,12 +13,11 @@ import java.util.List;
  * @author Ren-David Dimen
  */
 public class DataParser {
-	
-	static Road[] rd = new Road[3820];
 		
 	public static Road[] parseDataSet() throws IOException {
 		
 		BufferedReader br = null;
+		Road[] rd = new Road[3820];
 		String rdName = "";
 		String rdType = "";
 		String rdCity = "";
