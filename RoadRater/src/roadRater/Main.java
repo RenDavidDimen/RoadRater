@@ -30,8 +30,9 @@ public class Main {
 		rdData = RoadRater.getData();
 		rdData = SortName.sortName(rdData);
 		
-		getUserInput();
-		
+		//getUserInput();
+		DataParser.getRoute("McMaster University", "Jackson Square Hamilton");
+
 	}
 	
 	/**
