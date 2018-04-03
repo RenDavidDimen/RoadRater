@@ -11,10 +11,11 @@ public class Road implements Comparable<Road> {
 	
 	/**
 	 * Constructor for RoadADT.
-	 * @param city
-	 * @param prov
-	 * @param name
-	 * @param type
+	 * 
+	 * @param city - The name of the city the road is found in.
+	 * @param prov - The name of the province the road is found in. 
+	 * @param name - The name of the road. 
+	 * @param type - The type of the road (street, avenue, court, etc). 
 	 */
 	public Road(String city, String prov, String name, String type) {
 		this.city = city;
@@ -24,11 +25,12 @@ public class Road implements Comparable<Road> {
 	}
 	
 	/**
-	 * Allows a rank to be assigned to a street.  
-	 * 
-	 * To consider: When rank is updated, needs to take into account previous rank, 
-	 * and calculate average. 
-	 * @param r
+	 * Assigns an initial rank to the road.  
+	 *  
+	 * This is the inital method for setting the numerical ranking of a road. 
+	 * It begins the count for keeping track of how many times the rank has been updated by users.
+	 * This is so that an average can be taken for the rank of the road, instead of simply overwriting
+	 * the rank every time a user inputs a new rank.
 	 */
 	public void setRank(float r) {
 		this.rank = r;
@@ -36,7 +38,7 @@ public class Road implements Comparable<Road> {
 	}
 	
 	/**
-	 * Updates the rank. 
+	 * Updates the rank of the road. 
 	 * 
 	 * Takes into account previous rank to create an average instead of erasing past rank and replacing.
 	 * @param newRank
@@ -48,16 +50,14 @@ public class Road implements Comparable<Road> {
 	}
 	
 	/**
-	 * Returns the rank of a RoadADT.
-	 * @return this.rank
+	 * Returns the rank of the road.
 	 */
 	public float getRank() {
 		return this.rank;
 	}
 	
 	/**
-	 * Returns the name of the RoadADT.
-	 * @return this.name
+	 * Returns the name of the road.
 	 */
 	public String getRdName() {
 		return this.name;
@@ -72,16 +72,14 @@ public class Road implements Comparable<Road> {
 	}
 	
 	/**
-	 * Returns a RoadADT's city.
-	 * @return this.city
+	 * Returns the name of the road's city.
 	 */
 	public String getCity() {
 		return this.city;
 	}
 	
 	/**
-	 * Returns a RoadADT's province.
-	 * @return this.prov
+	 * Returns the name of the road's province.
 	 */
 	public String getProv() {
 		return this.prov;
@@ -89,7 +87,10 @@ public class Road implements Comparable<Road> {
 	
 	/**
 	 * CompareTo method compares ranks of two RoadADTs and returns value based on which rank is lower/higher.
-	 * @return int: -1 (less than), 1 (greater than), 0 (equal)
+	 * 
+	 * @param that - The road being compared to. 
+	 * @return Returns an int; -1 if this has a lower rank than that, 1 if this has a higher rank than that, 
+	 * 			or 0 if the ranks are equivalent. 
 	 */
 	public int compareTo(Road that) {
 		if (this.getRank() < that.getRank()) {
@@ -105,8 +106,10 @@ public class Road implements Comparable<Road> {
 	
 	/**
 	 * Compare method for 'name'. Returns value based on which street name comes first alphabetically.
-	 * @param that
-	 * @return int: -1 (less than), 1 (greater than), 0 (equal)
+	 * 
+	 * @param that - The road being compared to.
+	 * @return Returns an int value; -1 if the name of 'this' is first alphabetically, 1 if the name of 'that' 
+	 * 			is first alphabetically, or 0 if the names are equal. 
 	 */
 	public int compareName(Road that) {
 		char[] a = this.getRdName().toCharArray();
@@ -132,8 +135,8 @@ public class Road implements Comparable<Road> {
 	}
 	
 	/**
-	 * Returns string containing the road's data
-	 * @return rdData:	String
+	 * String representation of the road.
+	 * @return rdData - String holding the name, city name, province name, road type, and road rank. 
 	 */
 	public String toString() {
 		String rdData = "";
