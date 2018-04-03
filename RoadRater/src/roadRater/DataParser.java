@@ -24,6 +24,16 @@ import org.json.JSONObject;
  */
 public class DataParser {
 		
+	/**
+	 * parseDataSet
+	 * Reads HamiltonStreetData.txt to get the following
+	 * rdName:	Road Name
+	 * rdType:	Road Type
+	 * rdCity:	Road City
+	 * rdProv:	Province the road is in
+	 * @return rd: Road[] - Returns the populated array of Road objects
+	 * @throws IOException
+	 */
 	public static Road[] parseDataSet() throws IOException {
 		
 		BufferedReader br = null;
@@ -97,6 +107,13 @@ public class DataParser {
         }
 	}
 	
+	/**
+	 * getRoute
+	 * Sends a request to the Google Maps API and receives a JSON response that is then parsed.
+	 * A graph is then populated with the parsed data
+	 * @param start:	String - route starting point
+	 * @param end:	String - route end point
+	 */
 	public static void getRoute(String start, String end) {
 		// Call Google Maps API to get JSON Data
 		URL url;
@@ -155,6 +172,7 @@ public class DataParser {
 					jsonDist[j] = jsonObjSteps[j].getJSONObject("distance");
 					distance = jsonDist[j].getInt("value");
 					roadNode = getRoad(jsonInsSteps[j]);
+					// Instruction Data
 					System.out.printf("%20s %20d\n", roadNode, distance);
 				}
 				System.out.println("************************************************************************");
@@ -171,6 +189,12 @@ public class DataParser {
 		// Populate Graph
 	}
 	
+	/**
+	 * getRoad
+	 * Searches a string for key terms between the predetermined regular expressions.
+	 * @param s: String - string to be searched
+	 * @return roadName: String - street name or "last" if instructed to perform a u-turn
+	 */
 	public static String getRoad(String s) {
 		String pattern1 = "<b>";
 		String pattern2 = "</b>";
