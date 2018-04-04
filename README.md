@@ -10,10 +10,10 @@ This ensures that versioning the code is comprehensive and maintainable.
 
 ## Implementation
 
-- **Sort Features**:        Quick Sort implemented on an array of Roads to sort by name
-- **Search Features**:      Binary Search implemented on a sorted array of Roads
-- **Shortest Path Search**: Dijkstra's Algorithm is implemented to find the shortest path and smoothest path from one point to another
-- **Google Maps API**:      Requested a JSON response from the Google Maps API using a URL. Paresed the response to receive the routes and possible alternate routes, the name of the streets traversed, and the distance traveled on those roads.
+- **Quick Sort**: Sorting method implemented on an array of Roads to sort by name
+- **Binary Search**: Search implemented on a sorted array of Roads to find them by name
+- **Dijkstra's Algorithm**: Algorithm implemented to find the shortest path and smoothest path from one point to another
+- **Google Maps API**: Requested a JSON response from the Google Maps API using a URL. Paresed the response to receive the routes and possible alternate routes, the name of the streets traversed, and the distance traveled on those roads.
 
 
 ### Branch Breakdown
