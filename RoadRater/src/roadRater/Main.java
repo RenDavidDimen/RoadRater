@@ -31,7 +31,7 @@ public class Main {
 		rdData = SortName.sortName(rdData);
 		
 		//getUserInput();
-		DataParser.getRoute("McMaster University", "Jackson Square Hamilton");
+		DataParser.getRoute("McMaster University", "Jackson Square Hamilton", rdData);
 
 	}
 	

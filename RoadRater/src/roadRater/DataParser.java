@@ -114,14 +114,16 @@ public class DataParser {
 	 * @param start:	String - route starting point
 	 * @param end:	String - route end point
 	 */
-	public static void getRoute(String start, String end) {
+	public static void getRoute(String start, String end, Road[] rdData) {
 		// Call Google Maps API to get JSON Data
 		URL url;
 		JSONObject jsonObj;
 		JSONArray jsonArr;
 		String result = "";
-		String roadNode = "";
-		int distance = Integer.MIN_VALUE;
+		String startNode = "";
+		int index;
+		Graph graph = new Graph();
+		
 		start = start.replaceAll(" ", "+");
 		end = end.replaceAll(" ", "+");
 		
@@ -163,6 +165,13 @@ public class DataParser {
 				JSONObject jsonObjSteps[] = new JSONObject[jsonArrSteps[i].length()];
 				String jsonInsSteps[] = new String[jsonArrSteps[i].length()];
 				JSONObject jsonDist[] = new JSONObject[jsonArrSteps[i].length()];
+				String[] roadNode = new String[jsonArrSteps[i].length()];
+				int[] distance = new int[jsonArrSteps[i].length()];
+				double[] rank = new double[jsonArrSteps[i].length()];
+				
+				String lastNode = "";
+				int lastNodeDist = 0;
+				double lastNodeRank = 0;
 				
 				// Number of Nodes along path: jsonObjSteps.length
 				System.out.println("************************************************************************");
@@ -170,13 +179,51 @@ public class DataParser {
 					jsonObjSteps[j] = jsonArrSteps[i].getJSONObject(j);
 					jsonInsSteps[j] = jsonObjSteps[j].getString("html_instructions");
 					jsonDist[j] = jsonObjSteps[j].getJSONObject("distance");
-					distance = jsonDist[j].getInt("value");
-					roadNode = getRoad(jsonInsSteps[j]);
+					distance[j] = jsonDist[j].getInt("value");
+					roadNode[j] = getRoad(jsonInsSteps[j]);
+					
+					startNode = roadNode[0];
+					
+					// Get Rank Data
+					if (roadNode[j].equals("last")) {
+						index = BinarySearchST.findRoad(rdData, roadNode[j-1]);
+					} else {
+						index = BinarySearchST.findRoad(rdData, roadNode[j]);
+					}
+					
+					rank[j] = rdData[index].getRank();
+					
+					
+					
+					//Populate Graph
+					if (j == 0) {
+						graph.addnode(roadNode[j]);
+					} else if (j == jsonObjSteps.length-1){
+						graph.addnode(roadNode[j]);
+						System.out.println("Adding "+roadNode[j-1]+" to "+roadNode[j]+":\t"+distance[j-1]+" "+rank[j-1]);
+						graph.addedge(roadNode[j-1], roadNode[j], distance[j-1], rank[j-1]);
+						
+						lastNode = roadNode[j];
+						lastNodeDist = distance[j];
+						lastNodeRank = rank[j];
+					} else {
+						graph.addnode(roadNode[j]);
+						System.out.println("Adding "+roadNode[j-1]+" to "+roadNode[j]+":\t"+distance[j-1]+" "+rank[j-1]);
+						graph.addedge(roadNode[j-1], roadNode[j], distance[j-1], rank[j-1]);
+					}
+					
 					// Instruction Data
-					System.out.printf("%20s %20d\n", roadNode, distance);
+					System.out.printf("%20s %20d %20f\n", roadNode[j], distance[j], rank[j]);
+					
 				}
+				graph.addnode("end");
+				System.out.println("Adding "+lastNode+" to end:\t"+lastNodeDist+" "+lastNodeRank);
+				graph.addedge(lastNode, "end", lastNodeDist, lastNodeRank);
+				
 				System.out.println("************************************************************************");
 			}
+			System.out.println(graph.getnode("University").connected);
+			graph.Dijkstra(startNode, "end");
 			
 		} catch (MalformedURLException e) {
 		    e.printStackTrace();
@@ -185,8 +232,6 @@ public class DataParser {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		
-		// Populate Graph
 	}
 	
 	/**
