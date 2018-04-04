@@ -20,8 +20,6 @@ This ensures that versioning the code is comprehensive and maintainable.
 
 - **master**:   Will contain working versions of the application.
 - **dev**:      This is where most of the conflicts will need to be resolved and pull requests merged to the branch.
-- **Name**:     Your name will act as a placeholder so we know who is working on what feature.
-- **Features**: The title "Features" may be replaced with a more descriptive name of what is being worked on. (ex, sorting).
 
 master
 > dev
