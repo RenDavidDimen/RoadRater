@@ -140,7 +140,6 @@ public class DataParser {
 			String inputLine;
 			while ((inputLine = br.readLine()) != null) {
 				inputLine.replace("\\s+", "");
-				//System.out.println(inputLine);
 				result=result+inputLine;
 			}
 		
@@ -175,6 +174,7 @@ public class DataParser {
 				double lastNodeRank = 0;
 				
 				// Number of Nodes along path: jsonObjSteps.length
+				output += "************************************************************************\n";
 				System.out.println("************************************************************************");
 				for (int j = 0; j < jsonObjSteps.length; j++) {
 					jsonObjSteps[j] = jsonArrSteps[i].getJSONObject(j);
@@ -185,7 +185,6 @@ public class DataParser {
 					
 					startNode = roadNode[0];
 					
-					System.out.println(roadNode[j]);
 //					System.out.println(BinarySearchST.findRoad(rdData, roadNode[j]));
 					
 					// Get Rank Data
@@ -216,15 +215,17 @@ public class DataParser {
 					
 					// Instruction Data
 					System.out.printf("%20s %20d %20f\n", roadNode[j], distance[j], rank[j]);
+					output += roadNode[j] +"\t"+ distance[j] + "\t" + rank[j]+"\n";
 					
 				}
 				graph.addnode("end");
 				graph.addedge(lastNode, "end", lastNodeDist, lastNodeRank);
 				
+				output += "************************************************************************\n";
 				System.out.println("************************************************************************");
 			}
 			//System.out.println(graph.getnode("end").distance);
-			output = graph.Dijkstra(startNode, "end") + "\n";
+			output += graph.Dijkstra(startNode, "end") + "\n\n";
 			output += graph.Dijkstra2(startNode, "end");
 			
 		} catch (MalformedURLException e) {
@@ -258,8 +259,6 @@ public class DataParser {
 		}
 		
 		for (int i = 0; i < keyTerms.size(); i++) {
-//			System.out.println(keyTerms.get(i));
-			
 			if(i == 0 && keyTerms.get(i).equals("U-turn")) {
 				roadName = "last";
 			} else if (i == 1 && !keyTerms.get(i).equals("left") && !keyTerms.get(i).equals("right")) {

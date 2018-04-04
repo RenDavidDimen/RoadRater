@@ -101,7 +101,8 @@ public class Graph {
 			visited.add(res);
 			all.remove(res);
 		}
-		output = "The shortest path have a length of "+done.get(end)+" and the procedure is "+doneroute.get(end);
+		output = "Shortest Path\nDistance:\t "+done.get(end)+"\nPath:\t"+doneroute.get(end);
+		System.out.println(output);
 		return output;
 	}
 	
@@ -121,7 +122,8 @@ public class Graph {
 		HashMap<String,String> doneroute = new HashMap<String,String>();
 		//the HashMap will store the route for every procedure
 		HashMap<String,String> temproute = new HashMap<String,String>();
-		String output;
+		
+		String output = "";
 		all=secnodeIDs;
 		done.put(strt,0.);
 		doneroute.put(strt, strt);
@@ -143,10 +145,11 @@ public class Graph {
 			if(tempid.isEmpty()){
 				break;
 			}
-			Double max=temp.get(tempid.get(0));
 			String res=tempid.get(0);
+			Double max=temp.get(res)/(temproute.get(res).split(",").length-1.0);
+			
 			for(String i : tempid){
-				if(temp.get(i)>max){
+				if(temp.get(i)/(temproute.get(i).split(",").length-1.0)>max){
 					res=i;
 				}
 			}
@@ -155,7 +158,8 @@ public class Graph {
 			visited.add(res);
 			all.remove(res);
 		}
-		output = "The best path have a rank of "+done.get(end)+" and the route will be " + doneroute.get(end)+" and the average rank will be "+done.get(end)/(doneroute.get(end).split(",").length-1.0);
+		output = "Smoothest Path:\nTotal Rank:\t"+done.get(end)+"\nPath:\t" + doneroute.get(end)+"\nAverage Rank:\t"+done.get(end)/(doneroute.get(end).split(",").length-1.0);
+		System.out.println(output);
 		return output;
 	}
 	
