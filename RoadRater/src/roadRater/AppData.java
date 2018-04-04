@@ -1,4 +1,3 @@
-
 package roadRater;
 
 import java.awt.BorderLayout;
@@ -74,20 +73,21 @@ public class AppData {
 		JPanel p4 = new JPanel();
 		JPanel p5 = new JPanel();
 		JPanel p6 = new JPanel();
+		JPanel p7 = new JPanel();
 		
 		//*********** Creating all of the labels. ***********
 		JLabel logo = new JLabel("Welcome to RoadRater!");
-		//JLabel intro = new JLabel();
 		
 		JLabel searchLabel = new JLabel("Street name:");
 		
 		JLabel searchOutput = new JLabel();
-//		searchOutput.setVisible(false);
 		
 		JLabel inputRate = new JLabel("Input your rating: ");
 		JTextField updateField = new JTextField(20);
 		JLabel dispNewRank = new JLabel();
 		
+		JLabel inputStart = new JLabel("Input your start address: ");
+		JLabel inputEnd = new JLabel("Input your end address: ");
 		
 		
 		//*********** Creating all of the textboxes. *********** 
@@ -109,17 +109,25 @@ public class AppData {
 		JTextField searchInputText = new JTextField(20);
 		searchInputText.setBounds(100,20,165,25);
 		
+		JTextArea routeOut = new JTextArea(20, 30);
+		routeOut.setEditable(false);
+		JScrollPane ROscroll = new JScrollPane(routeOut);
+		ROscroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		JTextField start = new JTextField(30);
+		JTextField end = new JTextField(30);
+		
 		
 		
 		//*********** Creating all of the buttons. ***********
 		JButton searchBtn = new JButton("Search");
-		//searchButton.setBounds(10,80,80,25);
 		JButton updateBtn = new JButton("Update Rank");
 		
 		JButton sortBtn1 = new JButton("Sort Alphabetically");
 		JButton sortBtn2 = new JButton("Sort by Rank");
 		
 		JButton resetBtn = new JButton("Reset");
+		
+		JButton calcRoute = new JButton("Calculate Route");
 		
 		//*********** Code for Home Tab. ***********
 		p1.add(logo);
@@ -262,19 +270,64 @@ public class AppData {
 		p6.add(p4, BorderLayout.CENTER);
 		p6.add(p5, BorderLayout.PAGE_END);
 		
+		//********** Code for Calculate Routes Tab. **********
+		p7.add(inputStart);
+		p7.add(start);
+		p7.add(inputEnd);
+		p7.add(end);
+		p7.add(calcRoute);
+		routeOut.setVisible(false);
+		p7.add(routeOut);
 		
-		
+		calcRoute.addActionListener(new ActionListener() {
+
+			// Calculates the average rank of the route between the start and end address given by user.
+			public void actionPerformed(ActionEvent arg0) {
+				routeOut.setText("The route information will go here when a function is implemented!!!");
 				
+				String startp = start.getText();
+				String endp = end.getText();
+				String output = "";
+
+// *****************************************************************************************************************				
+// ************	Something with graphing here ***********************************************************************
+// *****************************************************************************************************************	
+				
+				System.out.println(r.length);
+				
+				r = SortName.sortName(r);
+				
+				output = DataParser.getRoute(startp, endp, r);
+				
+				// example of how to set output in textbox:
+				routeOut.setText(output);
+				
+				routeOut.setVisible(true);
+				calcRoute.setText("Calculate New Route");
+				
+			}
+			
+		});
+		
 		
 		// Add all of the Tabs to the Tab Bar. 
 		atabs.add("Home", p1);
 		atabs.add("Search Streets", p23);
 		atabs.add("View Streets", p6);
+		atabs.add("Calculate Route", p7);
 		
 		// Add Tab Bar to frame. 
 		frame.add(atabs);
 	}
 	
+	/**
+	 * Initializes an array of type Road to hold the information on the roads in Hamilton. Also assigns a random int value
+	 * 		to the rank of each Road to simulate a dataset that had collected this information from users. 
+	 * 
+	 * @param r: An empty array of type Road. 
+	 * @return r: The full array of type Road.
+	 * @throws IOException
+	 */
 	private Road[] initData(Road[] r) throws IOException {
 		r = new Road[3820];
 		r = DataParser.parseDataSet();
@@ -287,6 +340,14 @@ public class AppData {
 		return r;
 	}
 	
+	
+	/** 
+	 * Sorts an array of type Road, either alphabetically with respect to road name, or numerically by rank. 
+	 * 
+	 * @param r: An unsorted array of type Road. 
+	 * @param b: An int (either 0 or 1) that's used to specify what parameter in the Road type to sort by (0 for name, 1 for rank).
+	 * @return Returns a sorted array of type Road.
+	 */
 	private Road[] sorted(Road[] r, int b) {
 		if (b == 0) {
 			SortName.sortName(r);
@@ -296,12 +357,17 @@ public class AppData {
 		return r;
 	}
 	
+	/**
+	 * Creates the output to be displayed when a user asks to see the whole dataset on Hamilton streets.
+	 * 
+	 * @param r: An array of type Road.
+	 * @return Returns a string representation of the information held in Road array, r. 
+	 */
 	private static String sOutput(Road[] r) {
 		String s = "";
 		
 		for (int i = 0; i < r.length; i++) {
 			s = s + r[i].getRdName() + "    " + r[i].getType() + ", " + r[i].getRank() + "\n";
-			System.out.println();
 		}
 		
 		return s;

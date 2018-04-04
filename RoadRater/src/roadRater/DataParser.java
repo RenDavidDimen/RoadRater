@@ -114,7 +114,7 @@ public class DataParser {
 	 * @param start:	String - route starting point
 	 * @param end:	String - route end point
 	 */
-	public static void getRoute(String start, String end, Road[] rdData) {
+	public static String getRoute(String start, String end, Road[] rdData) {
 		// Call Google Maps API to get JSON Data
 		URL url;
 		JSONObject jsonObj;
@@ -123,6 +123,7 @@ public class DataParser {
 		String startNode = "";
 		int index;
 		Graph graph = new Graph();
+		String output = "";
 		
 		start = start.replaceAll(" ", "+");
 		end = end.replaceAll(" ", "+");
@@ -184,6 +185,9 @@ public class DataParser {
 					
 					startNode = roadNode[0];
 					
+					System.out.println(roadNode[j]);
+//					System.out.println(BinarySearchST.findRoad(rdData, roadNode[j]));
+					
 					// Get Rank Data
 					if (roadNode[j].equals("last")) {
 						index = BinarySearchST.findRoad(rdData, roadNode[j-1]);
@@ -200,7 +204,6 @@ public class DataParser {
 						graph.addnode(roadNode[j]);
 					} else if (j == jsonObjSteps.length-1){
 						graph.addnode(roadNode[j]);
-						System.out.println("Adding "+roadNode[j-1]+" to "+roadNode[j]+":\t"+distance[j-1]+" "+rank[j-1]);
 						graph.addedge(roadNode[j-1], roadNode[j], distance[j-1], rank[j-1]);
 						
 						lastNode = roadNode[j];
@@ -208,7 +211,6 @@ public class DataParser {
 						lastNodeRank = rank[j];
 					} else {
 						graph.addnode(roadNode[j]);
-						System.out.println("Adding "+roadNode[j-1]+" to "+roadNode[j]+":\t"+distance[j-1]+" "+rank[j-1]);
 						graph.addedge(roadNode[j-1], roadNode[j], distance[j-1], rank[j-1]);
 					}
 					
@@ -217,13 +219,13 @@ public class DataParser {
 					
 				}
 				graph.addnode("end");
-				System.out.println("Adding "+lastNode+" to end:\t"+lastNodeDist+" "+lastNodeRank);
 				graph.addedge(lastNode, "end", lastNodeDist, lastNodeRank);
 				
 				System.out.println("************************************************************************");
 			}
-			System.out.println(graph.getnode("University").connected);
-			graph.Dijkstra(startNode, "end");
+			//System.out.println(graph.getnode("end").distance);
+			output = graph.Dijkstra(startNode, "end") + "\n";
+			output += graph.Dijkstra2(startNode, "end");
 			
 		} catch (MalformedURLException e) {
 		    e.printStackTrace();
@@ -232,6 +234,8 @@ public class DataParser {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+		
+		return output;
 	}
 	
 	/**

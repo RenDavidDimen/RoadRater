@@ -13,7 +13,9 @@ public class Graph {
 	}
 	
 	public static void addnode(String id){
-		nodes.put(id,new node(id));
+		if(!nodeIDs.contains(id)){
+			nodes.put(id,new node(id));
+		}
 		if(!nodeIDs.contains(id)){
 			nodeIDs.add(id);
 		}
@@ -44,7 +46,7 @@ public class Graph {
 		return nodes.get(node1);
 	}
 	
-	public static void Dijkstra(String strt,String end){
+	public static String Dijkstra(String strt,String end){
 		//the original list contains all id of nodes,this one will be empty as soon as all nodes has been checked
 		LinkedList<String> all = new LinkedList<String>();
 		//the HashMap records<ID,distance>for searched nodes
@@ -59,6 +61,7 @@ public class Graph {
 		HashMap<String,String> doneroute = new HashMap<String,String>();
 		//the HashMap will store the route for every procedure
 		HashMap<String,String> temproute = new HashMap<String,String>();
+		String output = "";
 		
 		all=nodeIDs;
 		done.put(strt,0);
@@ -66,19 +69,25 @@ public class Graph {
 		visited.add(strt);
 		all.remove(strt);
 		//Proceed as the "all" list is not empty this one will find the shortest path.
+
 		while(!all.isEmpty()){
 			temp.clear();
 			tempid.clear();
 			for(String i: visited){
 				for(String j: getnode(i).connected){
 					if(!visited.contains(j)){
+						//System.out.println(getnode(j).id);
+						//System.out.println(done.get(i));
+						//System.out.println(getnode(j).distance.get(i));
 						temp.put(getnode(j).id,done.get(i)+getnode(j).distance.get(i));
 						temproute.put(getnode(j).id,doneroute.get(i)+","+getnode(j).id);
 						tempid.add(getnode(j).id);
 					}
 				}
 			}
-			
+			if(tempid.isEmpty()){
+				break;
+			}
 			int min=temp.get(tempid.get(0));
 			String res=tempid.get(0);
 			for(String i : tempid){
@@ -86,15 +95,17 @@ public class Graph {
 					res=i;
 				}
 			}
+			//System.out.println(res);
 			done.put(res,temp.get(res));
 			doneroute.put(res,temproute.get(res));
 			visited.add(res);
 			all.remove(res);
 		}
-		System.out.println("The shortest path have a length of "+done.get(end)+" and the procedure is "+doneroute.get(end));
+		output = "The shortest path have a length of "+done.get(end)+" and the procedure is "+doneroute.get(end);
+		return output;
 	}
 	
-	public static void Dijkstra2(String strt,String end){
+	public static String Dijkstra2(String strt,String end){
 		//the original list contains all id of nodes,this one will be empty as soon as all nodes has been checked
 		LinkedList<String> all = new LinkedList<String>();
 		//the HashMap records<ID,rank>for searched nodes
@@ -110,7 +121,7 @@ public class Graph {
 		HashMap<String,String> doneroute = new HashMap<String,String>();
 		//the HashMap will store the route for every procedure
 		HashMap<String,String> temproute = new HashMap<String,String>();
-		
+		String output;
 		all=secnodeIDs;
 		done.put(strt,0.);
 		doneroute.put(strt, strt);
@@ -129,6 +140,9 @@ public class Graph {
 					}
 				}
 			}
+			if(tempid.isEmpty()){
+				break;
+			}
 			Double max=temp.get(tempid.get(0));
 			String res=tempid.get(0);
 			for(String i : tempid){
@@ -141,7 +155,8 @@ public class Graph {
 			visited.add(res);
 			all.remove(res);
 		}
-		System.out.println("The best path have a rank of "+done.get(end)+" and the route will be " + doneroute.get(end)+" and the average rank will be "+done.get(end)/(doneroute.get(end).split(",").length-1.0));
+		output = "The best path have a rank of "+done.get(end)+" and the route will be " + doneroute.get(end)+" and the average rank will be "+done.get(end)/(doneroute.get(end).split(",").length-1.0);
+		return output;
 	}
 	
 	/**
@@ -152,20 +167,5 @@ public class Graph {
 		nodeIDs.clear();
 		nodes.clear();
 		
-	}
-	
-	
-	public static void populateGraph() {
-		// TODO Auto-generated method stub
-		nodeIDs.clear();
-		nodes.clear();
-		addnode("1");
-		addnode("2");
-		addnode("3");
-		addedge("1","2",3,1);
-		addedge("1","3",1,2);
-		addedge("2","3",1,3);
-		Dijkstra("1","2");
-		Dijkstra2("1","2");
 	}
 }
