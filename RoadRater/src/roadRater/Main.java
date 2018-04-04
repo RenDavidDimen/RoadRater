@@ -30,8 +30,9 @@ public class Main {
 		rdData = RoadRater.getData();
 		rdData = SortName.sortName(rdData);
 		
-		getUserInput();
-		
+		//getUserInput();
+		DataParser.getRoute("McMaster University", "Jackson Square Hamilton", rdData);
+
 	}
 	
 	/**
@@ -40,16 +41,16 @@ public class Main {
 	public static void getUserInput() {
 		// Read user input
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Commands:\n\tUpdate Rank\n\tSearch\n\tRoute\n\tExit");
+		System.out.println("Commands:\n\tRank\n\tSearch\n\tRoute\n\tExit");
 		System.out.println("Please enter a command");
 		
-		feature = sc.nextLine();
+		feature = sc.next();
 		feature = feature.toLowerCase();
 		
 		System.out.println(feature);
 		
 		switch (feature) {
-			case "update rank":
+			case "rank":
 				update(sc);
 			case "search":
 				search(sc);
@@ -148,7 +149,7 @@ public class Main {
 		System.out.println("Commands:");
 		System.out.println("Please enter a Street Name to Search or enter 'Exit' to return to the main menu");
 		
-		String input = in.nextLine();
+		String input = in.next();
 		
 		switch (input) {
 			case "exit":

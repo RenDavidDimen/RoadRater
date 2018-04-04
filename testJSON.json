@@ -1,0 +1,229 @@
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJV0VGY4ObLIgRjwYWYLtuwDU",
+         "types" : [ "establishment", "point_of_interest", "shopping_mall" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJwSr3RKyELIgRHAFDYeoAnjk",
+         "types" : [ "establishment", "point_of_interest", "university" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 43.2627257,
+               "lng" : -79.87138659999999
+            },
+            "southwest" : {
+               "lat" : 43.2563387,
+               "lng" : -79.91919439999999
+            }
+         },
+         "copyrights" : "Map data ©2018 Google",
+         "legs" : [
+            {
+               "distance" : {
+                  "text" : "4.5 km",
+                  "value" : 4479
+               },
+               "duration" : {
+                  "text" : "8 mins",
+                  "value" : 450
+               },
+               "end_address" : "1280 Main St W, Hamilton, ON L8S 4L8, Canada",
+               "end_location" : {
+                  "lat" : 43.2581671,
+                  "lng" : -79.91915499999999
+               },
+               "start_address" : "2 King St W, Hamilton, ON L8P 1A1, Canada",
+               "start_location" : {
+                  "lat" : 43.2573388,
+                  "lng" : -79.87138659999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "1.7 km",
+                        "value" : 1658
+                     },
+                     "duration" : {
+                        "text" : "4 mins",
+                        "value" : 219
+                     },
+                     "end_location" : {
+                        "lat" : 43.2627173,
+                        "lng" : -79.8904289
+                     },
+                     "html_instructions" : "Head \u003cb\u003ewest\u003c/b\u003e on \u003cb\u003eKing St W\u003c/b\u003e/\u003cb\u003eHamilton Regional Rd 8\u003c/b\u003e toward \u003cb\u003eSummers Ln\u003c/b\u003e",
+                     "polyline" : {
+                        "points" : "ku_gGd{nfN]jBcAvF]vBw@fEKl@Q|@SfA_@lBQfAk@tCkAvGaB`IMh@uAjGaBjH_@lBYxAu@zDKb@oApG{@bEGVI`@k@hCEPOl@ObACTCVANAL?L?R?HAD?L@L?J?R"
+                     },
+                     "start_location" : {
+                        "lat" : 43.2573388,
+                        "lng" : -79.87138659999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 126
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 9
+                     },
+                     "end_location" : {
+                        "lat" : 43.2624138,
+                        "lng" : -79.89192179999999
+                     },
+                     "html_instructions" : "Keep \u003cb\u003eleft\u003c/b\u003e to continue on \u003cb\u003eHamilton Regional Rd 8\u003c/b\u003e",
+                     "maneuver" : "keep-left",
+                     "polyline" : {
+                        "points" : "_w`gGdrrfNBZBRDZBZDXDXLbAPhA"
+                     },
+                     "start_location" : {
+                        "lat" : 43.2627173,
+                        "lng" : -79.8904289
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.5 km",
+                        "value" : 459
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 25
+                     },
+                     "end_location" : {
+                        "lat" : 43.2595257,
+                        "lng" : -79.8956893
+                     },
+                     "html_instructions" : "Take the \u003cb\u003eOntario 403 W\u003c/b\u003e ramp on the \u003cb\u003eleft\u003c/b\u003e to \u003cb\u003eBrantford\u003c/b\u003e",
+                     "polyline" : {
+                        "points" : "au`gGn{rfNLR@B@@?B@@DPFXH\\BLFPFX`@pAJXJZFNDLFLLTFJDFFHHHHHFDDDFDFDHDDDPHzAp@VNJFJFHHPLLLHHHJLNJNHLHJLXVf@BF@@?@@?@@@@@?JH"
+                     },
+                     "start_location" : {
+                        "lat" : 43.2624138,
+                        "lng" : -79.89192179999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.7 km",
+                        "value" : 730
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 28
+                     },
+                     "end_location" : {
+                        "lat" : 43.25708239999999,
+                        "lng" : -79.9040074
+                     },
+                     "html_instructions" : "Merge onto \u003cb\u003eON-403 W\u003c/b\u003e",
+                     "maneuver" : "merge",
+                     "polyline" : {
+                        "points" : "ac`gG`ssfNHRFRHTJ^HXF\\FVDZDXTxAH`@PnAVhBPrATvAVjB^dCNjAJp@Nx@Lt@Jl@Lj@XpATz@^lA`@lAPb@Th@BF"
+                     },
+                     "start_location" : {
+                        "lat" : 43.2595257,
+                        "lng" : -79.8956893
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.5 km",
+                        "value" : 490
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 48
+                     },
+                     "end_location" : {
+                        "lat" : 43.2584952,
+                        "lng" : -79.9069276
+                     },
+                     "html_instructions" : "Take exit \u003cb\u003e69A\u003c/b\u003e for \u003cb\u003eON-8\u003c/b\u003e/\u003cb\u003eMain Street W\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : {
+                        "points" : "ws_gG`gufN@T@H@FBJZz@Ph@Z`AVv@HZFVDLBLDXBT@R?T?RCRAREPGPGRINGJGJGFEDKHSJQFKBM@G?K?KAYE{@Qy@SWE]GKASCYA"
+                     },
+                     "start_location" : {
+                        "lat" : 43.25708239999999,
+                        "lng" : -79.9040074
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1.0 km",
+                        "value" : 978
+                     },
+                     "duration" : {
+                        "text" : "2 mins",
+                        "value" : 113
+                     },
+                     "end_location" : {
+                        "lat" : 43.2579006,
+                        "lng" : -79.9189427
+                     },
+                     "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eMain St W\u003c/b\u003e/\u003cb\u003eHamilton Regional Rd 8\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "s|_gGhyufNH|AFdA^hHXfFHnAD|@Dx@CXAF?FAP@t@DlCDbE?dA?zCB`DB~D@bCBfF@nB"
+                     },
+                     "start_location" : {
+                        "lat" : 43.2584952,
+                        "lng" : -79.9069276
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "38 m",
+                        "value" : 38
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 8
+                     },
+                     "end_location" : {
+                        "lat" : 43.2581671,
+                        "lng" : -79.91915499999999
+                     },
+                     "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eUniversity Ave\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "{x_gGjdxfNGJEHGJMHGDIG"
+                     },
+                     "start_location" : {
+                        "lat" : 43.2579006,
+                        "lng" : -79.9189427
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "ku_gGd{nfNaBbJuA~HqA`H}@|EkAvGaB`IcBtHaCxKkDjQyBfKU~@SxAGbAAp@DhARdBR|APhALRBD@DZvA|@vC`@fAb@r@`@^^VpCrAt@l@l@t@~@fBFBJHHRPh@d@nBj@pDdDtUv@hEn@lC^lAr@pBXp@B^DR`B~EZnAHn@@h@Cf@Gd@Od@QZa@b@e@RYDS?e@GkDs@_@EYAH|Af@nJb@vHJvBE`@AXFbEHfQJzSMTUTGDIG"
+         },
+         "summary" : "King St W/Hamilton Regional Rd 8",
+         "warnings" : [],
+         "waypoint_order" : []
+      }
+   ],
+   "status" : "OK"
+}
+Done

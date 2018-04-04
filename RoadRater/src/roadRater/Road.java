@@ -41,6 +41,7 @@ public class Road implements Comparable<Road> {
 	 * Updates the rank of the road. 
 	 * 
 	 * Takes into account previous rank to create an average instead of erasing past rank and replacing.
+	 * @param newRank
 	 */
 	public void updateRank(int newRank) {
 		this.rank = this.rank * this.count;
@@ -64,6 +65,7 @@ public class Road implements Comparable<Road> {
 	
 	/**
 	 * Returns type of street.
+	 * @return this.type
 	 */
 	public String getType() {
 		return this.type;

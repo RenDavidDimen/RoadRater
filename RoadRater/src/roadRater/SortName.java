@@ -108,7 +108,7 @@ public class SortName {
 	 *  @param y - An int representing an index of a Road in array a. 
 	 */
 	private static void swap(Road[] a, int x, int y) {
-		Comparable temp = a[x];
+		Road temp = a[x];
 		a[x] = a[y];
 		a[y] = temp;
 	}
