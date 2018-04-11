@@ -43,7 +43,7 @@ public class Road implements Comparable<Road> {
 	 * Takes into account previous rank to create an average instead of erasing past rank and replacing.
 	 * @param newRank
 	 */
-	public void updateRank(int newRank) {
+	public void updateRank(float newRank) {
 		this.rank = this.rank * this.count;
 		this.count++;
 		this.rank = (this.rank + newRank)/this.count;
