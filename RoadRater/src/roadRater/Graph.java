@@ -26,7 +26,7 @@ public class Graph {
 	
 	public static class node{
 		private String id;
-		LinkedList<String> connected = new LinkedList<String>();
+		public LinkedList<String> connected = new LinkedList<String>();
 		HashMap<String,Integer> distance = new HashMap<String,Integer>();
 		HashMap<String,Double> rank = new HashMap<String,Double>();
 		node(String name){
