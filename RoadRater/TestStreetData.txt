@@ -1,0 +1,95 @@
+<gml:featureMember>
+<fme:lrnf000r15g_e gml:id="id406d27c9-30ae-411c-bb6d-f7b2ecb96ec9">
+<fme:NGD_UID>4939263</fme:NGD_UID>
+<fme:NAME>Telephone</fme:NAME>
+<fme:TYPE>RD</fme:TYPE>
+<fme:AFL_VAL>7586</fme:AFL_VAL>
+<fme:ATL_VAL>7728</fme:ATL_VAL>
+<fme:AFR_VAL>7587</fme:AFR_VAL>
+<fme:ATR_VAL>7727</fme:ATR_VAL>
+<fme:CSDUID_L>3514019</fme:CSDUID_L>
+<fme:CSDNAME_L>Hamilton</fme:CSDNAME_L>
+<fme:CSDTYPE_L>TP</fme:CSDTYPE_L>
+<fme:CSDUID_R>3514019</fme:CSDUID_R>
+<fme:CSDNAME_R>Hamilton</fme:CSDNAME_R>
+<fme:CSDTYPE_R>TP</fme:CSDTYPE_R>
+<fme:PRUID_L>35</fme:PRUID_L>
+<fme:PRNAME_L>Ontario</fme:PRNAME_L>
+<fme:PRUID_R>35</fme:PRUID_R>
+<fme:PRNAME_R>Ontario</fme:PRNAME_R>
+<fme:CLASS>23</fme:CLASS>
+<gml:curveProperty>
+<gml:LineString srsName="_FME_0" srsDimension="2">
+<gml:posList>7309322.6029 984393.585700002 7309802.3857 984679.762899999 7310053.0543 984826.397100002</gml:posList>
+</gml:LineString>
+</gml:curveProperty>
+</fme:lrnf000r15g_e>
+</gml:featureMember>
+<gml:featureMember>
+<fme:lrnf000r15g_e gml:id="id8694470a-0d2d-4b2d-be97-a2305ddc46ed">
+<fme:NGD_UID>4679788</fme:NGD_UID>
+<fme:CSDUID_L>3525005</fme:CSDUID_L>
+<fme:CSDNAME_L>Hamilton</fme:CSDNAME_L>
+<fme:CSDTYPE_L>C</fme:CSDTYPE_L>
+<fme:CSDUID_R>3525005</fme:CSDUID_R>
+<fme:CSDNAME_R>Hamilton</fme:CSDNAME_R>
+<fme:CSDTYPE_R>C</fme:CSDTYPE_R>
+<fme:PRUID_L>35</fme:PRUID_L>
+<fme:PRNAME_L>Ontario</fme:PRNAME_L>
+<fme:PRUID_R>35</fme:PRUID_R>
+<fme:PRNAME_R>Ontario</fme:PRNAME_R>
+<fme:CLASS>23</fme:CLASS>
+<gml:curveProperty>
+<gml:LineString srsName="_FME_0" srsDimension="2">
+<gml:posList>7185771.7429 871425.462900002 7185779.8943 871456.088599999 7185783.1086 871473.337099999</gml:posList>
+</gml:LineString>
+</gml:curveProperty>
+</fme:lrnf000r15g_e>
+</gml:featureMember>
+<gml:featureMember>
+<fme:lrnf000r15g_e gml:id="idb4ba59be-7e94-4727-b68d-dcac36781960">
+<fme:NGD_UID>4937483</fme:NGD_UID>
+<fme:CSDUID_L>3514019</fme:CSDUID_L>
+<fme:CSDNAME_L>Hamilton</fme:CSDNAME_L>
+<fme:CSDTYPE_L>TP</fme:CSDTYPE_L>
+<fme:CSDUID_R>3514019</fme:CSDUID_R>
+<fme:CSDNAME_R>Hamilton</fme:CSDNAME_R>
+<fme:CSDTYPE_R>TP</fme:CSDTYPE_R>
+<fme:PRUID_L>35</fme:PRUID_L>
+<fme:PRNAME_L>Ontario</fme:PRNAME_L>
+<fme:PRUID_R>35</fme:PRUID_R>
+<fme:PRNAME_R>Ontario</fme:PRNAME_R>
+<gml:curveProperty>
+<gml:LineString srsName="_FME_0" srsDimension="2">
+<gml:posList>7315898.4629 990340.148600001 7315905.1571 990320.591400001 7315899.4114 990312.262899999 7315887.9857 990312.245700002 7315881.7543 990323.579999998 7315884.02 990339.577100001</gml:posList>
+</gml:LineString>
+</gml:curveProperty>
+</fme:lrnf000r15g_e>
+</gml:featureMember>
+<gml:featureMember>
+<fme:lrnf000r15g_e gml:id="id76912465-3750-4623-bd02-a7ee6c1c49ee">
+<fme:NGD_UID>4674286</fme:NGD_UID>
+<fme:NAME>Ditton</fme:NAME>
+<fme:TYPE>DR</fme:TYPE>
+<fme:AFL_VAL>15</fme:AFL_VAL>
+<fme:ATL_VAL>111</fme:ATL_VAL>
+<fme:AFR_VAL>24</fme:AFR_VAL>
+<fme:ATR_VAL>94</fme:ATR_VAL>
+<fme:CSDUID_L>3525005</fme:CSDUID_L>
+<fme:CSDNAME_L>Hamilton</fme:CSDNAME_L>
+<fme:CSDTYPE_L>C</fme:CSDTYPE_L>
+<fme:CSDUID_R>3525005</fme:CSDUID_R>
+<fme:CSDNAME_R>Hamilton</fme:CSDNAME_R>
+<fme:CSDTYPE_R>C</fme:CSDTYPE_R>
+<fme:PRUID_L>35</fme:PRUID_L>
+<fme:PRNAME_L>Ontario</fme:PRNAME_L>
+<fme:PRUID_R>35</fme:PRUID_R>
+<fme:PRNAME_R>Ontario</fme:PRNAME_R>
+<fme:CLASS>23</fme:CLASS>
+<gml:curveProperty>
+<gml:LineString srsName="_FME_0" srsDimension="2">
+<gml:posList>7198173.7229 870284.062899999 7198177.0429 870277.782900002 7198177.9886 870269.474300001 7198170.6829 870194 7198164.5371 870156.1514 7198155.9343 870125.9714 7198109.98 869991.399999999 7198100.7257 869952.851399999 7198083.4171 869765.134300001 7198077.4029 869755.482900001 7198076.2314 869754.8314</gml:posList>
+</gml:LineString>
+</gml:curveProperty>
+</fme:lrnf000r15g_e>
+</gml:featureMember>
