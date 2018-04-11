@@ -36,28 +36,4 @@ public class DataParserTest {
 	    }
 	}
 	
-	@Test
-	public void testGetRoadUTurn() {
-		dir = "<b>U-turn</b>";
-		
-		String resp = dp.getRoad(dir);
-		assertEquals(resp,"last");
-	}
-	
-	@Test
-	public void testGetRoadDirection1() {
-		dir = "Head <b>west</b> on <b>King St W</b>/<b>Hamilton Regional Rd 8</b> toward <b>Summers Ln<b>";
-		
-		String resp = dp.getRoad(dir);
-		assertEquals(resp,"King");
-	}
-	
-	@Test
-	public void testGetRoadDirection2() {
-		dir = "Turn <b>left</b> onto <b>Main St W</b>/<b>Hamilton Regional Rd 8</b>";
-		
-		String resp = dp.getRoad(dir);
-		assertEquals(resp,"Main");
-	}
-	
 }

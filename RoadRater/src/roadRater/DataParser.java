@@ -329,7 +329,7 @@ public class DataParser {
 	 * @param s: String - string to be searched
 	 * @return roadName: String - street name or "last" if instructed to perform a u-turn
 	 */
-	public static String getRoad(String s) {
+	private static String getRoad(String s) {
 		String pattern1 = "<b>";
 		String pattern2 = "</b>";
 		String roadName = "";
